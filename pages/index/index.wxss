@@ -1,0 +1,31 @@
+/* catagory */
+.cata{
+  background: linear-gradient(#3399DB, #3193D3);
+}
+.cata__list{
+  display: flex;
+  justify-content: space-around;
+}
+.cata__item{
+  font-size: 32rpx;
+  color:rgba(255,255,255,0.6);
+  line-height: 48rpx;
+  margin-bottom: 20rpx;
+}
+.cata__item--active{
+  color:#fff;
+  font-weight: bold;
+  position: relative;
+}
+.cata__item--active:after{
+  content : "";
+  position: absolute;
+  left    : 30%;
+  bottom  : -10rpx;
+  width   : 40%; 
+  border-bottom: 5rpx solid rgba(255,255,255,0.6);
+}
+/* article */
+.article{
+
+}

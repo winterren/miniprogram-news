@@ -1,0 +1,27 @@
+<view class="cata">
+  <ul class="cata__list">
+    <li class="cata__item cata__item--active">国内</li>
+    <li class="cata__item">国际</li>
+    <li class="cata__item">财经</li>
+    <li class="cata__item">娱乐</li>
+    <li class="cata__item">军事</li>
+    <li class="cata__item">体育</li>
+    <li class="cata__item"></li>
+  </ul>
+</view>
+<view class="article">
+  <view class="article__item">
+    <view class="article__item__inf">
+      <view class="article__item__inf__title">啦啦啦</view>
+      <view class="article__item__inf__desc">人民日报 04:09</view>
+    </view>
+    <image class="article__item__pic" src="http://img1.gtimg.com/news/pics/hv1/38/85/1076/69988613.jpg"></image>
+  </view>
+  <view class="article__item">
+    <view class="article__item__inf">
+      <view class="article__item__inf__title">啦啦啦</view>
+      <view class="article__item__inf__desc">人民日报 04:09</view>
+    </view>
+    <image class="article__item__pic" src="http://img1.gtimg.com/news/pics/hv1/38/85/1076/69988613.jpg"></image>
+  </view>
+</view>
