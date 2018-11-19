@@ -9,10 +9,15 @@
     <li class="cata__item"></li>
   </ul>
 </view>
+<view class="article--first">
+  <view class="article--first__title">成都师范鬼地方个沙发为从v1啦啦啦</view>
+  <view class="article--first__desc">人民日报 04:09</view>
+  <image class="article--first__pic" src="http://img1.gtimg.com/news/pics/hv1/38/85/1076/69988613.jpg"></image>
+</view>
 <view class="article">
   <view class="article__item">
     <view class="article__item__inf">
-      <view class="article__item__inf__title">啦啦啦</view>
+      <view class="article__item__inf__title">成都师范鬼地方个沙发为从v1啦啦啦</view>
       <view class="article__item__inf__desc">人民日报 04:09</view>
     </view>
     <image class="article__item__pic" src="http://img1.gtimg.com/news/pics/hv1/38/85/1076/69988613.jpg"></image>
@@ -24,4 +29,10 @@
     </view>
     <image class="article__item__pic" src="http://img1.gtimg.com/news/pics/hv1/38/85/1076/69988613.jpg"></image>
   </view>
+</view>
+
+<view>
+  <view class="a"></view>
+  <view class="b"></view>
+  <view class="c"></view>
 </view>
