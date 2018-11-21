@@ -1,6 +1,7 @@
 Page({
   data: {
     articlesResult:[],
+    articlesResultFormat:[],
     catagory:['gn', 'gj', 'cj', 'yl', 'js', 'ty', 'other'],
     catagoryZh:{
       'gn': '国内',
@@ -29,17 +30,26 @@ Page({
           articlesResult: result,
         });
         console.log(result);
+        console.log(typeof(result[1].date));
         for(let i=0;i<result.length;i++){
-          console.log(this.convertDate(result[i].date));
-        }
+          // console.log(this.convertDate(result[i].date));
+        };
       },
     })
   },
-  convertDate(dateString){
-    let stringDay = dateString.substr(5, 2).replace(/\b(0+)/gi, "") +"月"+ dateString.substr(8, 2).replace(/\b(0+)/gi, "")+"日";
-    let stringTime = dateString(11,5);
-    return stringDay + stringTime;
-  },
+  // convertDate(res){
+  //   let stringDay;
+  //   let stringTime;
+  //   for (let i = 0; i < res.length; i++){
+  //     let stringDay = dateString.substr(5, 2).replace(/\b(0+)/gi, "") + "月" + dateString.substr(8, 2).replace(/\b(0+)/gi, "") + "日";
+  //     let stringTime = dateString(11, 5);
+  //     this.setData({
+  //       articlesResultFormat:
+  //     })
+  //   }
+    
+  //   return stringDay + stringTime;
+  // },
   onReady: function () {
 
   },
