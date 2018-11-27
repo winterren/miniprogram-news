@@ -1,2 +1,15 @@
-<!--pages/article/article.wxml-->
-<text>pages/article/article.wxml</text>
+<view class="wrapper">
+  <!-- 文章标题 -->
+  <view class="title">{{articleTitle}}</view>
+  <!-- 文章日期、时间、阅读量等 -->
+  <view class="desc">
+    <view class="desc__posttime">{{articleDate}}</view>
+    <!-- <view class="desc__pageview">阅读 1408</view> -->
+  </view>
+  <!-- 文章内容 -->
+  <view class="content" wx:for="{{articleContent}}">
+    <p class="content__p" wx:if="{{item.type=='p'}}">{{item.text}}</p>
+    <p class="content__strong" wx:elif="{{item.type=='strong'}}">{{item.text}}</p>
+    <image class="content__image" wx:elif="{{item.type=='image'}}" src="{{item.src}}" mode='widthFix'></image>
+  </view>
+</view>

@@ -1,28 +1,24 @@
+<!-- 分类 -->
 <view class="cata">
   <view class="cata__list">
-    <view wx:for="{{catagory}}">
+    <view wx:for="{{catagory}}" bindtap='onTapCatagory' data-index="{{index}}">
       <view class="cata__item {{item===catagoryActive?'cata__item--active':''}}">{{catagoryZh[item]}}</view>
     </view>
   </view>
 </view>
-<view class="article--first">
-  <view class="article--first__title">成都师范鬼地方个沙发为从v1啦啦啦</view>
-  <view class="article--first__desc">人民日报 04:09</view>
+<!-- 首图 -->
+<view class="article--first" wx:for="{{articlesResultFormatFrom1}}" bindtap='onTapArticle' data-id="{{item.id}}">
+  <view class="article--first__title">{{item.title}}</view>
+  <view class="article--first__desc">{{item.date}}</view>
   <view class="article--first__tag--hot">热门</view>
-  <image class="article--first__pic" src="http://img1.gtimg.com/news/pics/hv1/38/85/1076/69988613.jpg"></image>
+  <image class="article--first__pic" src="{{item.firstImage}}"></image>
 </view>
+<!-- 文章列表 -->
 <view class="article">
-  <view class="article__item">
-    <view class="article__item__inf">
-      <view class="article__item__inf__title">成都师范鬼地方个沙发为从v1啦地方个沙发为从</view>
-      <view class="article__item__inf__desc">人民日报 04:09</view>
-    </view>
-    <image class="article__item__pic" src="http://img1.gtimg.com/news/pics/hv1/38/85/1076/69988613.jpg"></image>
-  </view>
-  <view class="article__item" wx:for="{{articlesResult}}">
+  <view class="article__item" wx:for="{{articlesResultFormatFrom2}}" bindtap='onTapArticle' data-id="{{item.id}}">
     <view class="article__item__inf">
       <view class="article__item__inf__title">{{item.title}}</view>
-      <view class="article__item__inf__desc">{{item.source+'  '+itemp.date}}</view>
+      <view class="article__item__inf__desc">{{item.source+'  '+item.date}}</view>
     </view>
     <image class="article__item__pic" src="{{item.firstImage}}"></image>
   </view>

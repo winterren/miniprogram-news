@@ -1,1 +1,28 @@
-/* pages/article/article.wxss */
+.wrapper{
+  padding: 30rpx;
+}
+.title{
+  font-size: 50rpx;
+  line-height: 70rpx;
+}
+.desc{
+  margin: 15rpx 0;
+  font-size: 32rpx;
+  line-height: 45rpx;
+  color:#999;
+  display: flex;
+  justify-content: space-between;
+}
+.desc__posttime{}
+.desc__pageview{}
+.content{
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  line-height: 45rpx;
+}
+.content__strong{
+  font-weight: bolder;
+}
+.content__image{
+  width: 690rpx;
+}

@@ -37,7 +37,13 @@
 		},
 		"miniprogram": {
 			"current": 0,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "文章页",
+					"pathName": "pages/article/article"
+				}
+			]
 		}
 	}
 }
