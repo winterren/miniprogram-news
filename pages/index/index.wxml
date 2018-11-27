@@ -6,13 +6,26 @@
     </view>
   </view>
 </view>
-<!-- 首图 -->
-<view class="article--first" wx:for="{{articlesResultFormatFrom1}}" bindtap='onTapArticle' data-id="{{item.id}}">
+<!-- 首图轮播 -->
+<swiper class="swiper--container" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{articlesResultFormatFrom1}}">
+    <swiper-item class="swiper__block">
+      <image src="{{item.firstImage}}" class="slide-image"  bindtap='onTapArticle' data-id="{{item.id}}">
+        <view class="swiper__block__title">{{item.title}}</view>
+        <view class="swiper__block__desc">{{item.date}}</view>
+        <view class="swiper__block__tag--hot">热门</view>
+      </image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 首图单图 -->
+<!-- <view class="article--first" wx:for="{{articlesResultFormatFrom1}}" bindtap='onTapArticle' data-id="{{item.id}}">
   <view class="article--first__title">{{item.title}}</view>
   <view class="article--first__desc">{{item.date}}</view>
   <view class="article--first__tag--hot">热门</view>
   <image class="article--first__pic" src="{{item.firstImage}}"></image>
-</view>
+</view> -->
 <!-- 文章列表 -->
 <view class="article">
   <view class="article__item" wx:for="{{articlesResultFormatFrom2}}" bindtap='onTapArticle' data-id="{{item.id}}">

@@ -26,7 +26,7 @@ Page({
         let timeDate = new Date(result.date);
         let timeString = timeDate.getFullYear() + '年' 
           + (timeDate.getMonth()+1)+ '月' 
-          + (timeDate.getDay()+1)+'日' 
+          + timeDate.getDate()+'日' 
           + timeDate.getHours()+ '时' 
           + timeDate.getMinutes()+'分';
         this.setData({
