@@ -26,6 +26,7 @@ Page({
   },
   onPullDownRefresh () {
     this.getNews();
+    wx.stopPullDownRefresh();
   },
   // 获取文章列表函数：请求ajax
   getNews () {

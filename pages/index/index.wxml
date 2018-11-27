@@ -11,7 +11,7 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{articlesResultFormatFrom1}}">
     <swiper-item class="swiper__block">
-      <image src="{{item.firstImage}}" class="slide-image"  bindtap='onTapArticle' data-id="{{item.id}}">
+      <image src="{{item.firstImage}}" class="swiper__block__image"  bindtap='onTapArticle' data-id="{{item.id}}">
         <view class="swiper__block__title">{{item.title}}</view>
         <view class="swiper__block__desc">{{item.date}}</view>
         <view class="swiper__block__tag--hot">热门</view>

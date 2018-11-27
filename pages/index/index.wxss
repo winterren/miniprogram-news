@@ -129,6 +129,10 @@
   border-radius: 0rpx 10rpx 0rpx 25rpx;
   z-index: 100;
 }
+.swiper__block__image{
+  width: 690rpx;
+  height: 400rpx;
+}
 .swiper__block__title{
   text-shadow: -1rpx -1rpx #111 ; 
   font-weight: bold;
