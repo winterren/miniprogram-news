@@ -1,18 +1,22 @@
+const DEFAULTIMAGE = '/images/default_img.png';//默认图片
+const CATAGORY = ['gn', 'gj', 'cj', 'yl', 'js', 'ty', 'other'];//新闻分类
+const CATAGORYZH = { //新闻分类（对应中文）
+  'gn': '国内',
+  'gj': '国际',
+  'cj': '财经',
+  'yl': '娱乐',
+  'js': '军事',
+  'ty': '体育',
+  'other': '其他'
+};
+
 Page({
   data: {
     articlesResultFormat: [], //ajax返回文章列表
     articlesResultFormatFrom1: [], //ajax返回文章列表（首图文章）
     articlesResultFormatFrom2: [], //ajax返回文章列表（除了首图的文章）
-    catagory:['gn', 'gj', 'cj', 'yl', 'js', 'ty', 'other'], //新闻分类
-    catagoryZh:{ //新闻分类（对应中文）
-      'gn': '国内',
-      'gj': '国际',
-      'cj': '财经',
-      'yl': '娱乐',
-      'js': '军事',
-      'ty': '体育',
-      'other': '其他'
-    },
+    catagory: CATAGORY, //新闻分类
+    catagoryZh: CATAGORYZH, //新闻分类（对应中文）
     catagoryActive:'gn', //默认分类
     // swiper
     imgUrls: [],
@@ -24,6 +28,7 @@ Page({
   onLoad () {
     this.getNews();
   },
+  // 下拉刷新
   onPullDownRefresh () {
     this.getNews();
     wx.stopPullDownRefresh();
@@ -52,24 +57,27 @@ Page({
     let stringDate;//生成时间字符串
     let timeStamp = new Date();//当前时间戳
     for (let i = 0; i < res.length; i++){
+      // 将源数据中Date转换为字符串，当年新闻不显示年份
       resDate = new Date(res[i].date);
       stringDate = (timeStamp.getFullYear() === resDate.getFullYear() ? '' : (resDate.getFullYear() + '年'))
         + (resDate.getMonth() + 1) + '月' + resDate.getDate() + '日 '
         + this.fillZero(resDate.getHours()) + ':'
         + this.fillZero(resDate.getMinutes());
+      // 将源数据中source为空的定义为“未知来源”
       stringSource = res[i].source ? res[i].source : '未知来源';
+      // 存入临时新数组
       tempArticle.push({
         'id': res[i].id,
         'title': res[i].title,
-        'firstImage': res[i].firstImage,
+        'firstImage': (res[i].firstImage ? res[i].firstImage : DEFAULTIMAGE),
         'date': stringDate,
         'source': stringSource,
       });
     };
     this.setData({
-      articlesResultFormat: tempArticle,
-      articlesResultFormatFrom1: tempArticle.slice(0, 2),
-      articlesResultFormatFrom2: tempArticle.slice(2), 
+      articlesResultFormat: tempArticle,//ajax返回文章列表
+      articlesResultFormatFrom1: tempArticle.slice(0, 2),//ajax返回文章列表（首图文章）
+      articlesResultFormatFrom2: tempArticle.slice(2), //ajax返回文章列表（除了首图的文章）
     });
   },
   // 时间字符串补零函数
@@ -97,7 +105,7 @@ Page({
       url: '../article/article?id='+id,
     })
   },
-  // swiper
+  // swiper相关函数
   changeIndicatorDots: function (e) {
     this.setData({
       indicatorDots: !this.data.indicatorDots

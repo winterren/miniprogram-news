@@ -1,9 +1,9 @@
 Page({
   data:{
-    articleId: 1523074607672,
+    articleId: "",
     articleTitle:"",
     articleDate:"",
-    tempContent:"<h1>hello</h1>",
+    articleReadCount:"",
     articleContent:[],
   },
   onLoad(option){
@@ -23,16 +23,19 @@ Page({
       },
       success: res => {
         let result = res.data.result;
+        // 将源数据中Date转换为字符串，当年新闻不显示年份
         let timeDate = new Date(result.date);
-        let timeString = timeDate.getFullYear() + '年' 
+        let timeStamp = new Date();//当前时间戳
+        let timeString = (timeStamp.getFullYear()===timeDate.getFullYear()?'':(timeDate.getFullYear() + '年'))
           + (timeDate.getMonth()+1)+ '月' 
-          + timeDate.getDate()+'日' 
+          + timeDate.getDate()+'日 ' 
           + timeDate.getHours()+ '时' 
           + timeDate.getMinutes()+'分';
         this.setData({
           articleTitle: result.title,
           articleDate: timeString,
           articleContent: result.content,
+          articleReadCount: result.readCount,
         })
       },
     })

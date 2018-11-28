@@ -4,7 +4,7 @@
   <!-- 文章日期、时间、阅读量等 -->
   <view class="desc">
     <view class="desc__posttime">{{articleDate}}</view>
-    <!-- <view class="desc__pageview">阅读 1408</view> -->
+    <view class="desc__pageview">阅读 {{articleReadCount}}</view>
   </view>
   <!-- 文章内容 -->
   <view class="content" wx:for="{{articleContent}}">
