@@ -1,4 +1,4 @@
-const DEFAULTIMAGE = '/images/default_img.png';//默认图片
+const DEFAULTIMAGE = '/images/default_img.jpg';//默认图片
 const CATAGORY = ['gn', 'gj', 'cj', 'yl', 'js', 'ty', 'other'];//新闻分类
 const CATAGORYZH = { //新闻分类（对应中文）
   'gn': '国内',
